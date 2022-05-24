@@ -52,7 +52,7 @@ namespace ExPol
         /// <returns>Una vez se ha consumido la o las capsulas requeridas muestra un mensaje con las restantes.</returns>
         public string ConsumirCapsulas(int cantidadCafe)
         {
-            TotalDeCapsulas -= cantidadCafe; ///<value>Se resta la cantidad de cafe a la acutal</value>
+            TotalDeCapsulas -= cantidadCafe; ///<value>Se resta la cantidad de cafe a la acutal.</value>
 
             if (TotalDeCapsulas < 0)
             {
