@@ -6,49 +6,52 @@ using System;
 
 class cafetera
 {
-    public cafetera(string m, string r, double agua, double totaldecapsulas)
+    public const double CONSUMO_AGUA = 0.1;
+    public string Marca { get; set; }
+    public string Modelo { get; set; }
+    public double CantidadAgua { get; set; }
+    public double TotalDeCapsulas { get; set; }
+
+    public cafetera(string marca, string modelo, double cantidadAgua, double totalDeCapsulas)
     {
-        this.m = m; //marca de la máquina cafetera
-        this.r = r; //referencia del modelo
-        this.totaldecapsulas = totaldecapsulas; //Total de cápsulas en la máquina. 
-        this.agua = agua; //Cantidad de agua en el recipiente. 
-        }
+        Marca = marca; //marca de la máquina cafetera
+        Modelo = modelo; //referencia del modelo
+        TotalDeCapsulas = totalDeCapsulas; //Total de cápsulas en la máquina. 
+        CantidadAgua = cantidadAgua; //Cantidad de agua en el recipiente. 
+    }
 
 
-
-
-
-    public string m;
-    public string r;
-    public double agua;
-    public double totaldecapsulas;
-
-
-    public string consumoagua(double numerodecafe) //numero de cafés a hacer
+    public string ConsumirAgua(double cantidadDeCafe) //numero de cafés a hacer
     {
-        double constante = 0.1;
-        this.agua = this.agua - numerodecafe * constante; // Constante de consumo de agua 0.1l por cada unidad de café. 
-        if (this.agua < 0.1)
-        {   this.agua = 0;
+        CantidadAgua -= cantidadDeCafe * CONSUMO_AGUA; // Constante de consumo de agua 0.1l por cada unidad de café. 
+
+        if (CantidadAgua < 0.1)
+        {
+            CantidadAgua = 0;
             return "Falta agua en el depósito, por favor, revisar los niveles.";
         }
-        else{ return "Quedan" + this.agua + " centilitros";}
+        else
+        {
+            return "Quedan" + CantidadAgua + " centilitros";
+        }
     }
 
-    public string consumocapsulas(double numerodecafe) //Hacer un café 
+    public string ConsumirCapsulas(double cantidadCafe) //Hacer un café 
     {
-        this.totaldecapsulas = this.totaldecapsulas - numerodecafe;
-        if (this.totaldecapsulas < 0)
+        TotalDeCapsulas -= cantidadCafe;
+
+        if (TotalDeCapsulas < 0)
         {
-            this.totaldecapsulas = 0;
+            TotalDeCapsulas = 0;
             return "Faltan cápsulas en el depósito, por favor, compre cápsulas.";
         }
-        else {
-            return "Quedan" + this.totaldecapsulas + "unidades";
+        else
+        {
+            return "Quedan" + TotalDeCapsulas + "unidades";
         }
     }
 
-    public double reponercapsulas(double cantidadcapsulas)
+    public double ReponerCapsulas(double cantidadcapsulas)
     {
         this.totaldecapsulas = this.totaldecapsulas + cantidadcapsulas;
         return this.totaldecapsulas;
@@ -59,7 +62,6 @@ class cafetera
         return this.agua;
     }
 
-
     public void verespecificacion(string r, string m)
     {
         this.m = m;
@@ -68,14 +70,11 @@ class cafetera
 
 }
 
-
 class ejemplodemicafetera
 {
 
     static void main()
     {
-
-
         cafetera mi_cafetera_ejemplo = new cafetera("EspressoBarista", "Procoffee", 0.6, 7);
 
         Console.WriteLine(mi_cafetera_ejemplo.agua);
@@ -87,8 +86,6 @@ class ejemplodemicafetera
         Console.WriteLine(mi_cafetera_ejemplo.agua);
         mi_cafetera_ejemplo.reponercapsulas(3);
         Console.WriteLine(mi_cafetera_ejemplo.totaldecapsulas);
-
-
     }
 
 }
