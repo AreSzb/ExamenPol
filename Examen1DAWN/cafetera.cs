@@ -20,7 +20,6 @@ class cafetera
         CantidadAgua = cantidadAgua; //Cantidad de agua en el recipiente. 
     }
 
-
     public string ConsumirAgua(double cantidadDeCafe) //numero de cafés a hacer
     {
         CantidadAgua -= cantidadDeCafe * CONSUMO_AGUA; // Constante de consumo de agua 0.1l por cada unidad de café. 
@@ -51,41 +50,31 @@ class cafetera
         }
     }
 
-    public double ReponerCapsulas(double cantidadcapsulas)
+    public void ReponerCapsulas(double cantidadCapsulas)
     {
-        this.totaldecapsulas = this.totaldecapsulas + cantidadcapsulas;
-        return this.totaldecapsulas;
-    }
-    public double llenardep(double litros)
-    {
-        this.agua = this.agua + litros;
-        return this.agua;
+        TotalDeCapsulas += cantidadcapsulas;
     }
 
-    public void verespecificacion(string r, string m)
+    public void RellenarDeposito(double aguaIntroducida)
     {
-        this.m = m;
-        this.r = r;
+        CantidadAgua += aguaIntroducida;
     }
-
 }
 
 class ejemplodemicafetera
 {
-
     static void main()
     {
-        cafetera mi_cafetera_ejemplo = new cafetera("EspressoBarista", "Procoffee", 0.6, 7);
+        cafetera cafetera = new cafetera("EspressoBarista", "Procoffee", 0.6, 7);
 
-        Console.WriteLine(mi_cafetera_ejemplo.agua);
-        Console.WriteLine(mi_cafetera_ejemplo.consumocapsulas(5));
-        Console.WriteLine(mi_cafetera_ejemplo.totaldecapsulas);
-        Console.WriteLine(mi_cafetera_ejemplo.consumoagua(5));
-        Console.WriteLine(mi_cafetera_ejemplo.agua);
-        mi_cafetera_ejemplo.llenardep(0.5);
-        Console.WriteLine(mi_cafetera_ejemplo.agua);
-        mi_cafetera_ejemplo.reponercapsulas(3);
-        Console.WriteLine(mi_cafetera_ejemplo.totaldecapsulas);
+        Console.WriteLine(cafetera.CantidadAgua);
+        Console.WriteLine(cafetera.ConsumirCapsulas(5));
+        Console.WriteLine(cafetera.TotalDeCapsulas);
+        Console.WriteLine(cafetera.ConsumirAgua(5));
+        Console.WriteLine(cafetera.CantidadAgua);
+        cafetera.RellenarDeposito(0.5);
+        Console.WriteLine(cafetera.CantidadAgua);
+        cafetera.ReponerCapsulas(3);
+        Console.WriteLine(cafetera.TotalDeCapsulas);
     }
-
 }

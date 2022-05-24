@@ -14,9 +14,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\GitHub\\ExamenPol\\Examen1DAWN\\Examen1DAWN.csproj",
-      "projectName": "Examen1DAWN",
-      "projectPath": "D:\\GitHub\\ExamenPol\\Examen1DAWN\\Examen1DAWN.csproj",
+      "projectUniqueName": "D:\\GitHub\\ExamenPol\\Examen1DAWN\\a.csproj",
+      "projectName": "a",
+      "projectPath": "D:\\GitHub\\ExamenPol\\Examen1DAWN\\a.csproj",
       "packagesPath": "C:\\Users\\aran20548\\.nuget\\packages\\",
       "outputPath": "D:\\GitHub\\ExamenPol\\Examen1DAWN\\obj\\",
       "projectStyle": "PackageReference",
