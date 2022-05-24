@@ -1,0 +1,7 @@
+D:\GitHub\ExamenPol\Examen1DAWN\obj\Debug\Examen1DAWN.csproj.AssemblyReference.cache
+D:\GitHub\ExamenPol\Examen1DAWN\obj\Debug\Examen1DAWN.csproj.CoreCompileInputs.cache
+D:\GitHub\ExamenPol\Examen1DAWN\bin\Debug\ExPol.exe.config
+D:\GitHub\ExamenPol\Examen1DAWN\bin\Debug\ExPol.exe
+D:\GitHub\ExamenPol\Examen1DAWN\bin\Debug\ExPol.pdb
+D:\GitHub\ExamenPol\Examen1DAWN\obj\Debug\ExPol.exe
+D:\GitHub\ExamenPol\Examen1DAWN\obj\Debug\ExPol.pdb
